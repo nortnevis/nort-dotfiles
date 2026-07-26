@@ -226,6 +226,8 @@ hl.bind(mainMod .. " + S", hl.dsp.window.float())
 
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen_state({internal = 0, client = 2, action = "toggle"}))
+
 hl.bind(mainMod .. " + TAB", hl.dsp.layout("togglesplit"))
 
 -- Laptop multimedia keys for volume and LCD brightness
