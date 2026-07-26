@@ -121,7 +121,7 @@ hl.config({
 hl.config({
     input = {
         kb_layout = "us,ru",
-        kb_options = "caps:swapescape,grp:win_space_toggle",
+        kb_options = "grp:win_space_toggle",
         follow_mouse = 1,
         sensitivity = 0,
         numlock_by_default = true,
