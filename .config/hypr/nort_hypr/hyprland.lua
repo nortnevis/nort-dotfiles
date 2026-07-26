@@ -37,10 +37,7 @@ end)
 local terminal = "foot" -- kitty
 local file_manager = "nemo"
 --local menu = "wofi --show drun"
-local kitty_args = ""
-if terminal == "kitty" then
-	kitty_args = "-o background_opacity=0.85"
-end
+local kitty_args = "-o background_opacity=0.85"
 
 ----- ПОДКЛЮЧЕНИЕ ДОПОЛНИТЕЛЬНЫХ ФАЙЛОВ С КОНФИГОМ  ----------------------------
 
@@ -153,10 +150,17 @@ local mainMod = "SUPER"
 
 ----- ЗАПУСК ПРИЛОЖЕНИЙ --------------------------------------------------------
 
-hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
+local choosed_terminal 
 
-local optional_kitty_args = terminal .. (kitty_args ~= "" and (" " .. kitty_args) or "")
-hl.bind("ALT + CTRL + T", hl.dsp.exec_cmd(terminal .. optional_kitty_args, {
+if terminal == "kitty" then
+	choosed_terminal = terminal .. kitty_args
+else
+	choosed_terminal = terminal
+end
+
+hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(choosed_terminal))
+
+hl.bind("ALT + CTRL + T", hl.dsp.exec_cmd(choosed_terminal, {
 	float = true,
 	move = { 50, 75},
 	size = { 500, 400}
@@ -166,11 +170,11 @@ hl.bind(mainMod .. " + grave", hl.dsp.exec_cmd("~/.config/hypr/nort_hypr/rofi-cl
 
 hl.bind(mainMod .. " + semicolon", hl.dsp.exec_cmd("emote"))
 
-hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd(terminal .. " bash ~/vh.sh")) -- my nvim help notes
+hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd(choosed_terminal .. " bash ~/vh.sh")) -- my nvim help notes
 
-hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd(terminal .. " bash ~/hypr_conf.sh"))
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd(choosed_terminal .. " bash ~/hypr_conf.sh"))
 
-hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd(terminal .. " nvim ~/Documents/my_conf_changelog"))
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd(choosed_terminal .. " nvim ~/Documents/my_conf_changelog"))
 
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("~/.config/rofi/launchers/type-6/launcher.sh"))
 
@@ -200,9 +204,9 @@ hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("nemo"))
 
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("gedit -s"))
 
-hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd(terminal .. " emacs -nw"))
+hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd(choosed_terminal .. " emacs -nw"))
 
-hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(terminal .. " nvim"))
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(choosed_terminal .. " nvim"))
 
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("code"))
 
@@ -422,7 +426,7 @@ hl.window_rule({
 hl.window_rule({
     name  = "scroll_touchpad_10",
     match = {
-        class = "^(" .. terminal .. ")$",
+        class = "^(" .. choosed_terminal .. ")$",
     },
     scroll_touchpad = 10,
 })
@@ -487,7 +491,7 @@ hl.window_rule({
 
 -- windowrulev2 =  float on,^(thunar)$,title:^(.home)$
 
--- windowrulev2 =  float on,^($terminal)$,title:^(.home)$
+-- windowrulev2 =  float on,^($choosed_terminal)$,title:^(.home)$
 
 -- #windowrule = noborder,^(Rofi)$
 
