@@ -51,6 +51,7 @@
 - hyprland
 - hypridle
 - reflector
+- iwd
 - okular (pdf reader)
 - nvim
 - cmake
@@ -100,6 +101,7 @@
 - ripgrep
 - jq
 - yq
+- ocl-icd и clinfo
 
 Python:
 - pyenv
