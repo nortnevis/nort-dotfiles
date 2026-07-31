@@ -1,6 +1,10 @@
 require("nvchad.configs.lspconfig").defaults()
 
-local servers = { "html", "cssls", "clangd" }
+vim.lsp.config("opencl_ls", {
+	filetypes = { "cl", "lisp" }, -- lisp, because nvim-lspconfig treats .cl files as a lisp
+})
+
+local servers = { "html", "cssls", "clangd", "opencl_ls" }
 vim.lsp.enable(servers)
 
 -- read :h vim.lsp.config for changing options of lsp servers 
