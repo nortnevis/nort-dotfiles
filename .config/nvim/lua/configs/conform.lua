@@ -4,6 +4,8 @@ local options = {
     c = { "clang_format" },
     cpp = { "clang_format" },
     json = { "jq" },
+    makefile = { "mbake" },
+    cmake = { "cmake_format" },
     -- css = { "prettier" },
     -- html = { "prettier" },
   },
