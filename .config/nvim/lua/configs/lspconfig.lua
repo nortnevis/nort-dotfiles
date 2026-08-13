@@ -8,7 +8,7 @@ vim.lsp.config("clangd", {
   cmd = { "clangd", "--header-insertion=never" },
 })
 
-local servers = { "html", "cssls", "clangd", "opencl_ls", "stylua" }
+local servers = { "html", "cssls", "clangd", "opencl_ls", "stylua", "neocmakelsp" }
 vim.lsp.enable(servers)
 
 -- read :h vim.lsp.config for changing options of lsp servers
