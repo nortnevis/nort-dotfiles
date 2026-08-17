@@ -1,0 +1,12 @@
+[Match]
+Name=wlan0
+
+[Network]
+DHCP=yes
+
+[DHCPv4]
+UseDNS=false
+
+[DHCPv6]
+UseDNS=false
+
