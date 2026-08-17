@@ -37,6 +37,7 @@
 - добавил vim plug и настроил nvim плагины
 - Поменял escape и caps-lock местами в /etc/keyd/default.conf
 - Изменил HF_HOME на свою директорию для huggingface
+- отключил DHCP для DNS Server в `/etc/systemd/networkd.conf` и `/etc/iwd/main.conf`
 
 Настройки sway:
 - добавление лаунчера
@@ -102,6 +103,7 @@
 - jq
 - yq
 - ocl-icd и clinfo
+- ccache для ускорения сборки (hiredis as dependency)
 
 Python:
 - pyenv
