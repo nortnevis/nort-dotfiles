@@ -10,8 +10,10 @@ vim.opt.expandtab = false
 vim.opt.number = true
 vim.opt.relativenumber = true
 
-vim.opt.mouse = 'a'
-vim.opt.mousescroll = 'ver:1,hor:6'
+vim.opt.mouse = "a"
+vim.opt.mousescroll = "ver:1,hor:6"
+
+vim.opt.clipboard = "unnamedplus"
 
 -- local o = vim.o
 -- o.cursorlineopt ='both' -- to enable cursorline!
