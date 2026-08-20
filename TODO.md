@@ -1,1 +1,2 @@
 - [] Разобраться, почему я поставил `--disable-gpu` в electron-flags.conf
+- [] Добавить terminfo настройку для vps в Troubleshooting в knowledge-base
