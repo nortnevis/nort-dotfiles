@@ -1,0 +1,8 @@
+# How to use: git config --global include.path ~/.gitconfig.aliases
+
+[alias]
+        st = status
+        ci = commit
+        co = checkout
+        br = branch
+        hist = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches
