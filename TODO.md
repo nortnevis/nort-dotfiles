@@ -1,0 +1,1 @@
+- [] Разобраться, почему я поставил `--disable-gpu` в electron-flags.conf
