@@ -105,6 +105,7 @@
 - yq
 - ocl-icd и clinfo
 - ccache для ускорения сборки (hiredis as dependency)
+- nodejs, npm, pnpm
 
 Python:
 - pyenv
