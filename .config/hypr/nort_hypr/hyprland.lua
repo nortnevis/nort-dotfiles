@@ -1,23 +1,33 @@
 ----- НАСТРОЙКА МОНИТОРОВ ------------------------------------------------------
 
 hl.monitor({
-    output   = "HDMI-A-1",
-    mode     = "1920x1080@60",
-    position = "0x0",
-    scale    = 1,
+	output = "HDMI-A-1",
+	mode = "1920x1080@60",
+	position = "0x0",
+	scale = 1,
 })
 
 hl.config({
-    xwayland = {
-        force_zero_scaling = true,
-    },
+	xwayland = {
+		force_zero_scaling = true,
+	},
 })
 
 hl.config({
-    debug = {
-        overlay = false,
-    },
+	debug = {
+		overlay = false,
+	},
 })
+
+-- Выключить монитор при закрытии крышки
+hl.bind("switch:on:Lid Switch", function()
+	hl.dispatch(hl.dsp.dpms({ action = "disable", monitor = "eDP-1" }))
+end, { locked = true })
+
+-- Включить монитор при открытии крышки
+hl.bind("switch:off:Lid Switch", function()
+	hl.dispatch(hl.dsp.dpms({ action = "enable", monitor = "eDP-1" }))
+end, { locked = true })
 
 ----- АВТОСТАРТ ----------------------------------------------------------------
 
@@ -26,8 +36,8 @@ hl.config({
 --exec-once = hyprctl setcursor Catppuccin-Mocha-Rosewater-Cursors 24
 
 hl.on("hyprland.start", function()
-    hl.exec_cmd("hypridle")
-    hl.exec_cmd("waybar")
+	hl.exec_cmd("hypridle")
+	hl.exec_cmd("waybar")
 	hl.exec_cmd("wl-paste --type text --watch cliphist store ")
 	hl.exec_cmd("wl-paste --type image --watch cliphist store ")
 end)
@@ -47,86 +57,86 @@ local kitty_args = "-o background_opacity=0.85"
 ----- ГАПСЫ, БОРДЕРЫ, ЦВЕТА... -------------------------------------------------
 
 hl.config({
-    general = {
-        gaps_in = 0,
-        gaps_out = 0,
-        border_size = 0,
-        resize_on_border = false,
-        allow_tearing = false,
-        layout = "dwindle",
-        col = {
-            active_border = { colors = { "rgba(f2cdcdee)", "rgba(f5e0dcee)" }, angle = 45 },
-            inactive_border = "rgba(1e1e2eff)",
-        },
-    },
+	general = {
+		gaps_in = 0,
+		gaps_out = 0,
+		border_size = 0,
+		resize_on_border = false,
+		allow_tearing = false,
+		layout = "dwindle",
+		col = {
+			active_border = { colors = { "rgba(f2cdcdee)", "rgba(f5e0dcee)" }, angle = 45 },
+			inactive_border = "rgba(1e1e2eff)",
+		},
+	},
 	dwindle = {
-        preserve_split = true, -- Keeps the split direction permanent
-    },
+		preserve_split = true, -- Keeps the split direction permanent
+	},
 })
 
 ----- ДЕКОРАЦИИ ОКОН -----------------------------------------------------------
 
 hl.config({
-    decoration = {
-        rounding = 5,
-        active_opacity = 1.0,
-        inactive_opacity = 1.0,
-        shadow = {
-            enabled = true,
-            range = 4,
-            render_power = 3,
-            color = "rgba(1a1a1aee)",
-        },
-        blur = {
-            enabled = true,
-            size = 6,
-            passes = 1,
-            vibrancy = 0.1696,
-        },
-    },
+	decoration = {
+		rounding = 5,
+		active_opacity = 1.0,
+		inactive_opacity = 1.0,
+		shadow = {
+			enabled = true,
+			range = 4,
+			render_power = 3,
+			color = "rgba(1a1a1aee)",
+		},
+		blur = {
+			enabled = true,
+			size = 6,
+			passes = 1,
+			vibrancy = 0.1696,
+		},
+	},
 })
 
 ----- АНИМАЦИИ -----------------------------------------------------------------
 
 hl.config({
-    animations = {
-        enabled = true,
-    },
+	animations = {
+		enabled = true,
+	},
 })
 
 ----- НАСТРОЙКА ЛАЙОУТОВ -------------------------------------------------------
 
 hl.config({
-    master = {
-        new_status = "master",
-    },
+	master = {
+		new_status = "master",
+	},
 })
 
 ----- ВКЛЮЧИТЬ ДЕФОЛТНЫЕ ОБОИ --------------------------------------------------
 
 hl.config({
-    misc = {
-        force_default_wallpaper = -1,
-        -- Set to 0 or 1 to disable the anime mascot wallpapers
-        disable_hyprland_logo = true, 
-        -- If true disables the random hyprland logo / anime girl background. :(
-    },
+	misc = {
+		force_default_wallpaper = -1,
+		-- Set to 0 or 1 to disable the anime mascot wallpapers
+		disable_hyprland_logo = true,
+		-- If true disables the random hyprland logo / anime girl background. :(
+	},
 })
 
 ----- УСТРОЙСТВА ВВОДА ---------------------------------------------------------
 
 hl.config({
-    input = {
-        kb_layout = "us,ru",
-        kb_options = "grp:win_space_toggle",
-        follow_mouse = 1,
-        sensitivity = 0,
-        numlock_by_default = true,
-        touchpad = {
-            natural_scroll = true,
-            scroll_factor = 0.25,
-        },
-    },
+	input = {
+		kb_layout = "us,ru",
+		kb_options = "grp:win_space_toggle",
+		follow_mouse = 1,
+		sensitivity = 0,
+		numlock_by_default = true,
+		touchpad = {
+			natural_scroll = true,
+			scroll_factor = 0.25,
+		},
+	},
 })
 
 ----- ЖЕСТЫ --------------------------------------------------------------------
@@ -140,8 +150,8 @@ hl.gesture({
 ----- НАСТРОЙКА УСТРОЙСТВ ------------------------------------------------------
 
 hl.device({
-    name = "epic-mouse-v1",
-    sensitivity = -0.5,
+	name = "epic-mouse-v1",
+	sensitivity = -0.5,
 })
 
 ----- КЛАВИША МОДИФИКАТОР ------------------------------------------------------
@@ -150,7 +160,7 @@ local mainMod = "SUPER"
 
 ----- ЗАПУСК ПРИЛОЖЕНИЙ --------------------------------------------------------
 
-local choosed_terminal 
+local choosed_terminal
 
 if terminal == "kitty" then
 	choosed_terminal = terminal .. kitty_args
@@ -160,11 +170,14 @@ end
 
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(choosed_terminal))
 
-hl.bind("ALT + CTRL + T", hl.dsp.exec_cmd(choosed_terminal, {
-	float = true,
-	move = { 50, 75},
-	size = { 500, 400}
-}))
+hl.bind(
+	"ALT + CTRL + T",
+	hl.dsp.exec_cmd(choosed_terminal, {
+		float = true,
+		move = { 50, 75 },
+		size = { 500, 400 },
+	})
+)
 
 hl.bind(mainMod .. " + grave", hl.dsp.exec_cmd("~/.config/hypr/nort_hypr/rofi-clipboard.sh"))
 
@@ -174,7 +187,7 @@ hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd(choosed_terminal .. " bash ~/
 
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd(choosed_terminal .. " bash ~/hypr_conf.sh"))
 
-hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd(choosed_terminal .. " nvim ~/Documents/my_conf_changelog"))
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd(choosed_terminal .. " nvim ~/repos/nort-dotfiles/README.md"))
 
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("~/.config/rofi/launchers/type-6/launcher.sh"))
 
@@ -216,9 +229,19 @@ hl.bind(mainMod .. " + CTRL + ESCAPE", hl.dsp.exec_cmd("bash ~/sleep.sh"))
 
 hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd("hyprlock"))
 
-hl.bind("Print", hl.dsp.exec_cmd("grim -o DVI-D-1 ~/Images/screenshot/screen- $(date +%s) . png && notify-send -u normal -i accessories-screenshot скриншот сохранен"))
+hl.bind(
+	"Print",
+	hl.dsp.exec_cmd(
+		"grim -o DVI-D-1 ~/Images/screenshot/screen- $(date +%s) . png && notify-send -u normal -i accessories-screenshot скриншот сохранен"
+	)
+)
 
-hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd("grim -g $(slurp) ~/Images/screenshot/screen- $(date +%s) . png && notify-send -u normal -i accessories-screenshot скриншот сохранен"))
+hl.bind(
+	mainMod .. " + Print",
+	hl.dsp.exec_cmd(
+		"grim -g $(slurp) ~/Images/screenshot/screen- $(date +%s) . png && notify-send -u normal -i accessories-screenshot скриншот сохранен"
+	)
+)
 
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 
@@ -230,7 +253,7 @@ hl.bind(mainMod .. " + S", hl.dsp.window.float())
 
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 
-hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen_state({internal = 0, client = 2, action = "toggle"}))
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen_state({ internal = 0, client = 2, action = "toggle" }))
 
 hl.bind(mainMod .. " + TAB", hl.dsp.layout("togglesplit"))
 
@@ -267,16 +290,15 @@ hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
 
 hl.bind("ALT + TAB", function()
-    hl.dispatch(hl.dsp.window.cycle_next())
-    hl.dispatch(hl.dsp.window.bring_to_top())
+	hl.dispatch(hl.dsp.window.cycle_next())
+	hl.dispatch(hl.dsp.window.bring_to_top())
 end)
 
-
 hl.config({
-    misc = {
-        focus_on_activate = 1,
-        -- autofocus on new window and mouse moving (and also autofocus to browser when new page is loaded)
-    },
+	misc = {
+		focus_on_activate = 1,
+		-- autofocus on new window and mouse moving (and also autofocus to browser when new page is loaded)
+	},
 })
 
 ----- ПЕРЕКЛЮЧЕНИЕ ВОРКСПЕЙСОВ -------------------------------------------------
@@ -408,27 +430,27 @@ hl.bind(mainMod .. "+ CTRL + down", hl.dsp.window.resize({ x = 0, y = 50, relati
 -- hyprctl clients - что бы узнать класс приложения
 
 hl.window_rule({
-    name  = "file_manager_window_rule",
-    match = {
-        class = "^(" .. file_manager .. ")$",
-    },
-	float = true
+	name = "file_manager_window_rule",
+	match = {
+		class = "^(" .. file_manager .. ")$",
+	},
+	float = true,
 })
 
 hl.window_rule({
-    name  = "xdg_desktop",
-    match = {
-        class = "^(xdg-desktop-.*)$",
-    },
-	float = true
+	name = "xdg_desktop",
+	match = {
+		class = "^(xdg-desktop-.*)$",
+	},
+	float = true,
 })
 
 hl.window_rule({
-    name  = "scroll_touchpad_10",
-    match = {
-        class = "^(" .. choosed_terminal .. ")$",
-    },
-    scroll_touchpad = 10,
+	name = "scroll_touchpad_10",
+	match = {
+		class = "^(" .. choosed_terminal .. ")$",
+	},
+	scroll_touchpad = 10,
 })
 
 -- windowrule = float on,^(org.telegram.desktop)$
@@ -494,5 +516,3 @@ hl.window_rule({
 -- windowrulev2 =  float on,^($choosed_terminal)$,title:^(.home)$
 
 -- #windowrule = noborder,^(Rofi)$
-
-
