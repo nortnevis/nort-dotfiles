@@ -327,6 +327,10 @@ hl.bind(mainMod .. " + minus", hl.dsp.focus({ workspace = "r-1" }))
 
 hl.bind(mainMod .. " + equal", hl.dsp.focus({ workspace = "r+1" }))
 
+hl.bind(mainMod .. " + left", hl.dsp.focus({ workspace = "r-1" }))
+
+hl.bind(mainMod .. " + right", hl.dsp.focus({ workspace = "r+1" }))
+
 ----- ПЕРЕМЕЩЕНИЕ ОКОН НА ДРУГОЙ ВОРКСПЕЙС -------------------------------------
 
 hl.bind(mainMod .. " + SHIFT + 1", hl.dsp.window.move({ workspace = 1 }))
@@ -353,6 +357,10 @@ hl.bind(mainMod .. " + SHIFT + minus", hl.dsp.window.move({ workspace = "r-1" })
 
 hl.bind(mainMod .. " + SHIFT + equal", hl.dsp.window.move({ workspace = "r+1" }))
 
+hl.bind(mainMod .. " + SHIFT + left", hl.dsp.window.move({ workspace = "r-1" }))
+
+hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.move({ workspace = "r+1" }))
+
 ----- ПЕРЕМЕЩЕНИЕ ПЛАВАЮЩИИХ ОКОН ----------------------------------------------
 
 hl.bind(mainMod .. "+ ALT + H", hl.dsp.window.move({ x = -50, y = 0, relative = true }))
@@ -363,14 +371,14 @@ hl.bind(mainMod .. "+ ALT + K", hl.dsp.window.move({ x = 0, y = -50, relative = 
 
 hl.bind(mainMod .. "+ ALT + J", hl.dsp.window.move({ x = 0, y = 50, relative = true }))
 
-hl.bind(mainMod .. "+ ALT + left", hl.dsp.window.move({ x = -50, y = 0, relative = true }))
-
-hl.bind(mainMod .. "+ ALT + right", hl.dsp.window.move({ x = 50, y = 0, relative = true }))
-
-hl.bind(mainMod .. "+ ALT + up", hl.dsp.window.move({ x = 0, y = -50, relative = true }))
-
-hl.bind(mainMod .. "+ ALT + down", hl.dsp.window.move({ x = 0, y = 50, relative = true }))
-
+-- hl.bind(mainMod .. "+ ALT + left", hl.dsp.window.move({ x = -50, y = 0, relative = true }))
+--
+-- hl.bind(mainMod .. "+ ALT + right", hl.dsp.window.move({ x = 50, y = 0, relative = true }))
+--
+-- hl.bind(mainMod .. "+ ALT + up", hl.dsp.window.move({ x = 0, y = -50, relative = true }))
+--
+-- hl.bind(mainMod .. "+ ALT + down", hl.dsp.window.move({ x = 0, y = 50, relative = true }))
+--
 ----- ПЕРЕМЕЩЕНИЕ ОКОН --------------------------------------------------------
 
 hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.move({ direction = "l" }))
@@ -381,13 +389,13 @@ hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.move({ direction = "u" }))
 
 hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "d" }))
 
-hl.bind(mainMod .. " + SHIFT + left", hl.dsp.window.move({ direction = "l" }))
-
-hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.move({ direction = "r" }))
-
-hl.bind(mainMod .. " + SHIFT + up", hl.dsp.window.move({ direction = "u" }))
-
-hl.bind(mainMod .. " + SHIFT + down", hl.dsp.window.move({ direction = "d" }))
+-- hl.bind(mainMod .. " + SHIFT + left", hl.dsp.window.move({ direction = "l" }))
+--
+-- hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.move({ direction = "r" }))
+--
+-- hl.bind(mainMod .. " + SHIFT + up", hl.dsp.window.move({ direction = "u" }))
+--
+-- hl.bind(mainMod .. " + SHIFT + down", hl.dsp.window.move({ direction = "d" }))
 
 ----- СКРАЧПАД -----------------------------------------------------------------
 
@@ -417,13 +425,13 @@ hl.bind(mainMod .. "+ CTRL + K", hl.dsp.window.resize({ x = 0, y = -50, relative
 
 hl.bind(mainMod .. "+ CTRL + J", hl.dsp.window.resize({ x = 0, y = 50, relative = true }))
 
-hl.bind(mainMod .. "+ CTRL + left", hl.dsp.window.resize({ x = -50, y = 0, relative = true }))
-
-hl.bind(mainMod .. "+ CTRL + right", hl.dsp.window.resize({ x = 50, y = 0, relative = true }))
-
-hl.bind(mainMod .. "+ CTRL + up", hl.dsp.window.resize({ x = 0, y = -50, relative = true }))
-
-hl.bind(mainMod .. "+ CTRL + down", hl.dsp.window.resize({ x = 0, y = 50, relative = true }))
+-- hl.bind(mainMod .. "+ CTRL + left", hl.dsp.window.resize({ x = -50, y = 0, relative = true }))
+--
+-- hl.bind(mainMod .. "+ CTRL + right", hl.dsp.window.resize({ x = 50, y = 0, relative = true }))
+--
+-- hl.bind(mainMod .. "+ CTRL + up", hl.dsp.window.resize({ x = 0, y = -50, relative = true }))
+--
+-- hl.bind(mainMod .. "+ CTRL + down", hl.dsp.window.resize({ x = 0, y = 50, relative = true }))
 
 ----- ПРАВИЛА ОКОН -------------------------------------------------------------
 
