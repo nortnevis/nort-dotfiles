@@ -4,21 +4,8 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-PS1='\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
-# Default sudo editor
-export EDITOR="nvim"
-export VISUAL="nvim"
-export XCURSOR_SIZE=24
-export QT_QPA_PLATFORMTHEME=qt6ct # change to qt6ct if you have that
-export XDG_CURRENT_DESKTOP=Hyprland
-export XDG_SESSION_TYPE=wayland
-export XDG_SESSION_DESKTOP=Hyprland
-export QT_AUTO_SCREEN_SCALE_FACTOR=0
-export QT_QPA_PLATFORM=wayland
-export QT_QPA_PLATFORMTHEME=gtk3
-export XDG_CONFIG_HOME=$HOME/.config
-export QT_QPA_PLATFORM=wayland
 export HF_HOME="$HOME/huggingface"
 
 # Aliases
@@ -39,4 +26,13 @@ alias zapret-utils='$HOME/zapret-configs/utils-zapret.sh'
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - bash)"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/nort/.lmstudio/bin"
+# End of LM Studio CLI section
+
+
+if [ -f ~/.bash_user_defined.sh ]; then
+	. ~/.bash_user_defined.sh
+fi
 
