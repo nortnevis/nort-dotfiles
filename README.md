@@ -134,6 +134,7 @@ AI:
 - ~/hypr_conf.sh
 
 На компе:
+- noto-fonts-cjk 
 - uwsm (потому что waybar ломался с ошибкой "A dependency job for waybar.service failed.")
 Была проблема с использованием cpu для видосов на ютубе в google-chrome.
 Для решения проблемы:
