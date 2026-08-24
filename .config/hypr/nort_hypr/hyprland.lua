@@ -185,7 +185,7 @@ hl.bind(mainMod .. " + semicolon", hl.dsp.exec_cmd("emote"))
 
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd(choosed_terminal .. " bash ~/vh.sh")) -- my nvim help notes
 
-hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd(choosed_terminal .. " bash ~/hypr_conf.sh"))
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd(choosed_terminal .. " nvim ~/.config/hypr/nort_hypr/hyprland.lua"))
 
 hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd(choosed_terminal .. " nvim ~/repos/nort-dotfiles/README.md"))
 
