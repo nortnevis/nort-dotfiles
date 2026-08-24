@@ -15,5 +15,10 @@ vim.opt.mousescroll = "ver:1,hor:6"
 
 vim.opt.clipboard = "unnamedplus"
 
+vim.opt.exrc = true -- Enable searching local configs
+vim.opt.secure = true -- Enable requests for using local configs
+
+-- usage: create '.nvim.lua' file
+
 -- local o = vim.o
 -- o.cursorlineopt ='both' -- to enable cursorline!
