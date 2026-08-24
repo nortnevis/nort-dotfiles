@@ -6,6 +6,7 @@ local options = {
     json = { "jq" },
     make = { "mbake" },
     cmake = { "cmake_format" },
+    yaml = { "yamlfmt" },
     -- css = { "prettier" },
     -- html = { "prettier" },
   },
