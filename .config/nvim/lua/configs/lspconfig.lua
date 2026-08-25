@@ -8,7 +8,11 @@ vim.lsp.config("clangd", {
   cmd = { "clangd", "--header-insertion=never" },
 })
 
-local servers = { "html", "cssls", "clangd", "opencl_ls", "stylua", "neocmake" }
+vim.lsp.config("dockerls", {
+  cmd = { "docker-language-server", "start", "--stdio" },
+})
+
+local servers = { "html", "cssls", "clangd", "opencl_ls", "stylua", "neocmake", "dockerls" }
 vim.lsp.enable(servers)
 
 -- read :h vim.lsp.config for changing options of lsp servers
