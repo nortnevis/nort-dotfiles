@@ -106,6 +106,7 @@
 - ocl-icd и clinfo
 - ccache для ускорения сборки (hiredis as dependency)
 - nodejs, npm, pnpm
+- bear (generates compile_commands.json for clangd)
 
 Python:
 - pyenv
