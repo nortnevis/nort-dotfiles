@@ -123,6 +123,7 @@ Python:
 - emacs
 - gedit (простой текстовый редактор GNU)
 - sublime merge
+- hotspot.appimage (by kdab) for flamegraph creating
 
 AI:
 - llama-cpp
