@@ -107,6 +107,7 @@
 - ccache для ускорения сборки (hiredis as dependency)
 - nodejs, npm, pnpm
 - bear (generates compile_commands.json for clangd)
+- linux-tools (perf) + cargo (rustup)
 
 Python:
 - pyenv
