@@ -1,0 +1,37 @@
+# Clang-Format 19
+Language: Cpp
+Standard: Latest
+ColumnLimit: 120
+LineEnding: LF
+IndentWidth: 4
+TabWidth: 4
+#IndentAccessModifiers: false
+AccessModifierOffset: -4
+# Includes
+SortIncludes: CaseInsensitive
+IncludeBlocks: Regroup
+IncludeCategories:
+  # 3. C Standard Library (C++ Wrappers)
+  - Regex: '^<c(assert|ctype|errno|fenv|float|inttypes|limits|locale|math|setjmp|signal|stdarg|stddef|stdint|stdio|stdlib|string|time|uchar|wchar|wctype)>$'
+    Priority: 30
+  # 4. C POSIX Library (Directories)
+  - Regex: '^<(arpa|net|netinet|sys)/.*\.h>$'
+    Priority: 40
+  # 5. C POSIX Library
+  - Regex: '^<(aio|complex|cpio|devctl|dirent|dlfcn|endian|fcntl|fmtmsg|fnmatch|ftw|glob|grp|iconv|langinfo|libgen|libintl|monetary|mqueue|ndbm|netdb|nl_types|poll|pthread|pwd|regex|sched|search|semaphore|spawn|strings|stropts|syslog|tar|termios|trace|ulimit|unistd|utime|utmpx|wordexp)\.h>$'
+    Priority: 50
+  # 6. C Standard Library
+  - Regex: '^<(assert|ctype|errno|fenv|float|inttypes|iso646|limits|locale|math|setjmp|signal|stdalign|stdarg|stdatomic|stdbit|stdbool|stdckdint|stddef|stdint|stdio|stdlib|stdmchar|stdnoreturn|string|tgmath|threads|time|uchar|wchar|wctype)\.h>$'
+    Priority: 60
+  # 1. Special Testing Frameworks
+  - Regex: '^<(benchmark/benchmark|gtest/gtest)\.h>$'
+    Priority: 10
+  # 2. C++ Standard Library
+  - Regex: '^<[^.\/]+>$'
+    Priority: 20
+    # 7. Third Party Libraries
+  - Regex: '^<.*\..*>$'
+    Priority: 70
+  # 8. Relative / Project Headers (Catch-all)
+  - Regex: '.*'
+    Priority: 80
