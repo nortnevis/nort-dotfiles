@@ -229,6 +229,8 @@ hl.bind(mainMod .. " + CTRL + ESCAPE", hl.dsp.exec_cmd("bash ~/sleep.sh"))
 
 hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd("hyprlock"))
 
+hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd([[grim -g "$(slurp)" ~/images/screenshot_$(date +'%s').png]]))
+
 hl.bind(
 	"Print",
 	hl.dsp.exec_cmd(

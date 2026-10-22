@@ -24,6 +24,7 @@
 - v4l-utils для управления видеодрайверами (и веб-камерой)
 - Чтобы не засыпал при закрытии крышки: создал /etc/systemd/logind.conf.d/logind.conf и добавил туда `HandleLidSwitch=lock`
 - в `/etc/bluetooth/main.conf` раскомментировал строчку `NameResolving = true` в надежде, что это поможет с отображением имён устройств в `bluetui`.
+- для redmi buds 8 сделал следующее: `/etc/bluetooth/main.conf` параметр `ControllerMode = dual` и `JustWorksRepairing = always`
 - DNS over HTTPS (DoH) через dnscrypt-proxy (пока не работает).
 - Добавил привилегии для happ-dekstop: `sudo setcap cap_net_admin,cap_net_raw+eip /opt/happ/bin/Happ` (вряд ли нужно. Это не помогло, так как ломается QT на wayland при использовании sudo). Поэтому обратился по этой инструкции: https://wiki.archlinux.org/title/Privilege_elevation_for_graphical_applications#Wayland.
 - Установил xorg-xhost (с ним работает, но я хочу сделать всё через pkexec).
@@ -95,7 +96,8 @@
 - pavucontrol (audio gui)
 - loupe (GNU image viewer)
 - steam
-- flameshot
+- grim + slurp
+- xdg-desktop-portal-hyprland
 - discord
 - zerotier-one
 - amnezia-bin
@@ -108,6 +110,10 @@
 - nodejs, npm, pnpm
 - bear (generates compile_commands.json for clangd)
 - linux-tools (perf) + cargo (rustup)
+- matebook (для управления оборотами кулера на ноуте honor)
+- network-manager-applet (gui, которое можно открыть по команде nm-connection-editor) и networkmanager-l2tp (для впн по работе) + strongswan (networkmanager-openconnect) sudo resolvectl domain snx-tun "~aq.ru"
+- snx-rs
+- thunderbird
 
 Python:
 - pyenv
