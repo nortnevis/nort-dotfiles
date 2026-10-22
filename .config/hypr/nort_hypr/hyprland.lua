@@ -229,7 +229,12 @@ hl.bind(mainMod .. " + CTRL + ESCAPE", hl.dsp.exec_cmd("bash ~/sleep.sh"))
 
 hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd("hyprlock"))
 
-hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd([[grim -g "$(slurp)" ~/images/screenshot_$(date +'%s').png]]))
+hl.bind(
+	mainMod .. " + Z",
+	hl.dsp.exec_cmd(
+		[[FILE=~/images/screenshot_$(date +'%s').png && grim -g "$(slurp)" "$FILE" && wl-copy --type image/png < "$FILE" && notify-send -u normal -i accessories-screenshot скриншот сохранен]]
+	)
+)
 
 hl.bind(
 	"Print",
