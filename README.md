@@ -143,6 +143,8 @@ AI:
 - ~/hypr_conf.sh
 
 На компе:
+- lib32-nvidia-utils lib32-mesa xorg-xwayland (попытка решения проблем запуска trueconf)
+- trueconf (для вкс)
 - noto-fonts-cjk 
 - uwsm (потому что waybar ломался с ошибкой "A dependency job for waybar.service failed.")
 Была проблема с использованием cpu для видосов на ютубе в google-chrome.
@@ -150,3 +152,18 @@ AI:
 - sudo pacman -S libva-nvidia-driver libva-utils vdpauinfo
 По итогу я наверное не так понял проблему. Лагал курсор беспроводной мыши (проводная мышь работала идеально).
 Нагрузка на CPU была сопряжена с загрузкой данных с ютуба. Всё правильно.
+
+/etc/environment:
+```
+# Заставляет Qt использовать Wayland вместо X11
+QT_QPA_PLATFORM="wayland;xcb"
+
+# Включает аппаратное ускорение для Qt-приложений на NVIDIA
+GBM_BACKEND=nvidia-drm
+__GLX_VENDOR_LIBRARY_NAME=nvidia
+
+# Для корректного рендеринга Firefox / Chromium в Wayland
+MOZ_ENABLE_WAYLAND=1
+```
+ELECTRON_OZONE_PLATFORM_HINT=auto
+
