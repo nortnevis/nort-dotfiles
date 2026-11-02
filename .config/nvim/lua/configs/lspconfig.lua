@@ -5,7 +5,12 @@ vim.lsp.config("opencl_ls", {
 })
 
 vim.lsp.config("clangd", {
-  cmd = { "clangd", "--header-insertion=never" },
+  cmd = {
+    "clangd",
+    "--header-insertion=never",
+    "--clang-tidy",
+    "--completion-style=detailed",
+  },
 })
 
 vim.lsp.config("dockerls", {
