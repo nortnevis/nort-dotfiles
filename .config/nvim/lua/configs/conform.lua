@@ -26,6 +26,10 @@ local options = {
       args = { "format", "-" },
       stdin = true,
     },
+
+    clang_format = {
+      args = { "--style=file", "--fallback-style=LLVM" },
+    },
   },
 
   format_on_save = {
