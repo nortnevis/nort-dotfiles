@@ -8,6 +8,7 @@ vim.lsp.config("clangd", {
   cmd = {
     "clangd",
     "--header-insertion=never",
+    "--background-index",
     "--clang-tidy",
     "--completion-style=detailed",
   },
