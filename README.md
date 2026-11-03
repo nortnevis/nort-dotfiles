@@ -23,6 +23,7 @@
 - dns сервера можно задать в файлах соединений: `/etc/NetworkManager/system-connections/*.nmconnection`
 - v4l-utils для управления видеодрайверами (и веб-камерой)
 - Чтобы не засыпал при закрытии крышки: создал /etc/systemd/logind.conf.d/logind.conf и добавил туда `HandleLidSwitch=lock`
+- logind.conf включил засыпание на нажатие кнопки питания для ноута
 - в `/etc/bluetooth/main.conf` раскомментировал строчку `NameResolving = true` в надежде, что это поможет с отображением имён устройств в `bluetui`.
 - для redmi buds 8 сделал следующее: `/etc/bluetooth/main.conf` параметр `ControllerMode = dual` и `JustWorksRepairing = always`
 - DNS over HTTPS (DoH) через dnscrypt-proxy (пока не работает).
@@ -40,6 +41,8 @@
 - Изменил HF_HOME на свою директорию для huggingface
 - отключил DHCP для DNS Server в `/etc/systemd/networkd.conf` и `/etc/iwd/main.conf`
 - лимит на системный журнал командой: `sudo journalctl --vacuum-size=500M`
+- добавил шаблонный таргет `/etc/systemd/system/kexec-load@.service` для загрузки ядра в ram с целью быстрого ребута без BIOS утилитой kexec.
+- добавил snx-rs в `/etc/systemd/system/snx-rs.service` и `~/.config/systemd/user/snx-rs-gui.service` для автостарта.
 
 Настройки sway:
 - добавление лаунчера
@@ -103,6 +106,7 @@
 - amnezia-bin
 - keyd (для ремаппинга клавиш)
 - ripgrep
+- happ-desktop-bin (aur)
 - jq
 - yq
 - ocl-icd и clinfo
@@ -114,6 +118,7 @@
 - network-manager-applet (gui, которое можно открыть по команде nm-connection-editor) и networkmanager-l2tp (для впн по работе) + strongswan (networkmanager-openconnect) sudo resolvectl domain snx-tun "~aq.ru"
 - snx-rs
 - thunderbird
+- kexec (для перезагрузки без bios)
 
 Python:
 - pyenv
