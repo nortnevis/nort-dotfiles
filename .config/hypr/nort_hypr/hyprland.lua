@@ -40,12 +40,13 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("waybar")
 	hl.exec_cmd("wl-paste --type text --watch cliphist store ")
 	hl.exec_cmd("wl-paste --type image --watch cliphist store ")
+	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 end)
 
 ----- ПЕРЕМЕННЫЕ ---------------------------------------------------------------
 
 local terminal = "foot" -- kitty
-local file_manager = "nemo"
+local file_manager = "dolphin" -- "nemo"
 --local menu = "wofi --show drun"
 local kitty_args = "-o background_opacity=0.85"
 
@@ -211,7 +212,7 @@ hl.bind(mainMod .. " + l", hl.dsp.exec_cmd("lutris"))
 
 hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("gimp"))
 
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("nemo"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(file_manager))
 
 -- Editors
 
