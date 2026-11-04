@@ -119,7 +119,7 @@
 - network-manager-applet (gui, которое можно открыть по команде nm-connection-editor) и networkmanager-l2tp (для впн по работе) + strongswan (networkmanager-openconnect) sudo resolvectl domain snx-tun "~aq.ru"
 - snx-rs
 - thunderbird
-- kexec (для перезагрузки без bios)
+- kexec-tools (для перезагрузки без bios)
 - dolphin
 - xdg-desktop-portal-kde (для dolphin)
 
