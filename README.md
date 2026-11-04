@@ -122,6 +122,7 @@
 - kexec-tools (для перезагрузки без bios)
 - dolphin
 - xdg-desktop-portal-kde (для dolphin)
+- libqalculate (qalc для вычислений в linux)
 
 Python:
 - pyenv
