@@ -19,7 +19,7 @@
 - включил mutlilib для установки стима
 - включил force_zero_scaling для xwayland, чтобы нормальное разрешение было
 - установил gamescope
-- xdg-desktop-portal-gtk
+- Настройка порталов. Поставил `default=hyprland;kde`.
 - dns сервера можно задать в файлах соединений: `/etc/NetworkManager/system-connections/*.nmconnection`
 - v4l-utils для управления видеодрайверами (и веб-камерой)
 - Чтобы не засыпал при закрытии крышки: создал /etc/systemd/logind.conf.d/logind.conf и добавил туда `HandleLidSwitch=lock`
@@ -101,6 +101,7 @@
 - steam
 - grim + slurp
 - xdg-desktop-portal-hyprland
+- xdg-desktop-portal-gtk
 - discord
 - zerotier-one
 - amnezia-bin
@@ -119,6 +120,8 @@
 - snx-rs
 - thunderbird
 - kexec (для перезагрузки без bios)
+- dolphin
+- xdg-desktop-portal-kde (для dolphin)
 
 Python:
 - pyenv
