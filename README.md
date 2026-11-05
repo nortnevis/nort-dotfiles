@@ -43,6 +43,7 @@
 - лимит на системный журнал командой: `sudo journalctl --vacuum-size=500M`
 - добавил шаблонный таргет `/etc/systemd/system/kexec-load@.service` для загрузки ядра в ram с целью быстрого ребута без BIOS утилитой kexec.
 - добавил snx-rs в `/etc/systemd/system/snx-rs.service` и `~/.config/systemd/user/snx-rs-gui.service` для автостарта.
+- добавил в `~/.inputrc` настройку для отключения bell звука на уровне библиотеки readline
 
 Настройки sway:
 - добавление лаунчера
