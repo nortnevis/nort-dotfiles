@@ -443,6 +443,14 @@ hl.window_rule({
 })
 
 hl.window_rule({
+	name = "file_manager_window_rule",
+	match = {
+		class = "^(org.kde.dolphin)$",
+	},
+	float = true,
+})
+
+hl.window_rule({
 	name = "xdg_desktop",
 	match = {
 		class = "^(xdg-desktop-.*)$",
