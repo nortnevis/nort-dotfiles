@@ -1,0 +1,35 @@
+MenuBar=Disabled
+
+[$Version]
+update_info=dolphin_detailsmodesettings.upd:rename-leading-padding,dolphin_detailsmodesettings.upd:move-content-display,dolphin_directorysizemode.upd:convert-directorysizecount-to-directorysizemode
+
+[DetailsMode]
+PreviewSize=16
+
+[ExtractDialog]
+2752x1152 screen: Height=554
+2752x1152 screen: Width=1640
+3440x1440 screen: Height=698
+3440x1440 screen: Width=1988
+DirHistory[$e]=$HOME/extraSpace/image_gen/ComfyUI/my_workflows/,$HOME/proj/,$HOME/Desktop/
+
+[General]
+LockPanels=false
+Version=202
+ViewPropsTimestamp=2024,5,26,16,7,13.373
+
+[IconsMode]
+PreviewSize=128
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[MainWindow]
+MenuBar=Disabled
+
+[PreviewSettings]
+Plugins=glycin-image-rs,appimagethumbnail,audiothumbnail,glycin-heif,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,pothumbnail,imagethumbnail,jpegthumbnail,glycin-jxl,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mltpreview,mobithumbnail,opendocumentthumbnail,palathumbcreator,gsthumbnail,quithumbnail,rawthumbnail,glycin-svg,svgthumbnail,itinerarythumbnail,ffmpegthumbs,webarchivethumbnail
+
+[UiSettings]
+ColorScheme=OxygenDark

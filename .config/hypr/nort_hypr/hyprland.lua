@@ -45,10 +45,9 @@ end)
 
 ----- ПЕРЕМЕННЫЕ ---------------------------------------------------------------
 
-local terminal = "foot" -- kitty
+local terminal = "foot" -- "kitty"
 local file_manager = "dolphin" -- "nemo"
 --local menu = "wofi --show drun"
-local kitty_args = "-o background_opacity=0.85"
 
 ----- ПОДКЛЮЧЕНИЕ ДОПОЛНИТЕЛЬНЫХ ФАЙЛОВ С КОНФИГОМ  ----------------------------
 
@@ -161,19 +160,11 @@ local mainMod = "SUPER"
 
 ----- ЗАПУСК ПРИЛОЖЕНИЙ --------------------------------------------------------
 
-local choosed_terminal
-
-if terminal == "kitty" then
-	choosed_terminal = terminal .. kitty_args
-else
-	choosed_terminal = terminal
-end
-
-hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(choosed_terminal))
+hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 
 hl.bind(
 	"ALT + CTRL + T",
-	hl.dsp.exec_cmd(choosed_terminal, {
+	hl.dsp.exec_cmd(terminal, {
 		float = true,
 		move = { 50, 75 },
 		size = { 500, 400 },
@@ -184,15 +175,13 @@ hl.bind(mainMod .. " + grave", hl.dsp.exec_cmd("~/.config/hypr/nort_hypr/rofi-cl
 
 hl.bind(mainMod .. " + semicolon", hl.dsp.exec_cmd("emote"))
 
-hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd(choosed_terminal .. " bash ~/vh.sh")) -- my nvim help notes
+hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd(terminal .. " bash ~/vh.sh")) -- my nvim help notes
 
-hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd(choosed_terminal .. " nvim ~/.config/hypr/nort_hypr/hyprland.lua"))
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd(terminal .. " nvim ~/.config/hypr/nort_hypr/hyprland.lua"))
 
-hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd(choosed_terminal .. " nvim ~/repos/nort-dotfiles/README.md"))
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd(terminal .. " nvim ~/repos/nort-dotfiles/README.md"))
 
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("~/.config/rofi/launchers/type-6/launcher.sh"))
-
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("thunar"))
 
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("google-chrome-stable --restore-last-session"))
 
@@ -218,9 +207,9 @@ hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(file_manager))
 
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("gedit -s"))
 
-hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd(choosed_terminal .. " emacs -nw"))
+hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd(terminal .. " emacs -nw"))
 
-hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(choosed_terminal .. " nvim"))
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(terminal .. " nvim"))
 
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("code"))
 
@@ -464,7 +453,7 @@ hl.window_rule({
 hl.window_rule({
 	name = "scroll_touchpad_10",
 	match = {
-		class = "^(" .. choosed_terminal .. ")$",
+		class = "^(" .. terminal .. ")$",
 	},
 	scroll_touchpad = 10,
 })
@@ -529,6 +518,6 @@ hl.window_rule({
 
 -- windowrulev2 =  float on,^(thunar)$,title:^(.home)$
 
--- windowrulev2 =  float on,^($choosed_terminal)$,title:^(.home)$
+-- windowrulev2 =  float on,^($terminal)$,title:^(.home)$
 
 -- #windowrule = noborder,^(Rofi)$
