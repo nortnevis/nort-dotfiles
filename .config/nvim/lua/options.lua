@@ -18,6 +18,8 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.exrc = true -- Enable searching local configs
 vim.opt.secure = true -- Enable requests for using local configs
 
+vim.opt.autoread = true -- Update editor's buffer, if file was changed
+
 -- usage: create '.nvim.lua' file
 
 -- local o = vim.o
