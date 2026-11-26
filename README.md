@@ -124,6 +124,7 @@
 - dolphin
 - xdg-desktop-portal-kde (для dolphin)
 - libqalculate (qalc для вычислений в linux)
+- tailspin для логов (colorize less)
 
 Python:
 - pyenv
